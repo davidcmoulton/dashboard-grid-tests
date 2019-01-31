@@ -31,10 +31,6 @@
 
   .page--side-by-side & {
 
-    //@media screen and (min-width: map_get($breakpoint, two)) {
-    //  grid-column: 1 / 8;
-    //}
-
     @media screen and (min-width: map_get($breakpoint, three)) {
       grid-column: 1 / 8;
     }
@@ -48,10 +44,6 @@
   & .review {
     display: none;
 
-    //@media screen and (min-width: map_get($breakpoint, two)) {
-    //  grid-column: 1 / -1;
-    //}
-    //
     @media screen and (min-width: map_get($breakpoint, three)) {
       display: block;
       grid-column: 8 / -1;
