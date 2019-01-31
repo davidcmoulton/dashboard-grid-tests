@@ -25,13 +25,6 @@
 
   @media screen and (min-width: map_get($breakpoint, two)) {
     grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, two), 1fr);
-
-    // FiX: Error: Incompatible units: 'rem' and 'fr'. Is this even possible?
-    //.page--side-by-side & {
-    //  grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, two) -1, 1fr), 1fr + $grid-gap;
-    //  margin-right: 0;
-    //}
-
   }
 
   @media screen and (min-width: map_get($breakpoint, three)) {
