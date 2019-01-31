@@ -1,0 +1,107 @@
+html {
+  font-size: 16px;
+  font-family: "Noto Serif", serif; }
+  html, html body {
+    margin: 0;
+    padding: 0; }
+
+h1,
+h2,
+h3 {
+  font-family: "Noto Sans", sans-serif;
+  margin-top: 0; }
+
+ul,
+ol {
+  list-style: none;
+  margin: 0;
+  padding: 0; }
+
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-Regular-webfont-custom-2-subsetting.woff2") format("woff2"); }
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Sans";
+  src: url("../fonts/NotoSans-SemiBold-webfont-custom-2-subsetting.woff2") format("woff2");
+  font-weight: 600; }
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("../fonts/NotoSerif-Regular-webfont-custom-2-subsetting.woff2") format("woff2"); }
+@font-face {
+  font-display: fallback;
+  font-family: "Noto Serif";
+  src: url("../fonts/NotoSerif-Bold-webfont-basic-latin-subsetting.woff2") format("woff2");
+  font-weight: bold; }
+/*
+  Conceptually:
+
+  The number of grid columns changes depending on the viewport width:
+    - default -> 4 cols
+    - min-width: 480px -> 6 cols
+    - min-width: 768px -> 8 cols
+    - min-width: 1000px -> 12 cols
+
+ */
+.grid {
+  margin: 0 auto;
+  padding-inline: 1.5rem;
+  max-width: 79.5rem;
+  display: grid;
+  grid-gap: 1.5rem;
+  grid-template-columns: repeat(4, 1fr); }
+  @media screen and (min-width: 30rem) {
+    .grid {
+      grid-template-columns: repeat(6, 1fr); } }
+  @media screen and (min-width: 48rem) {
+    .grid {
+      grid-template-columns: repeat(8, 1fr); } }
+  @media screen and (min-width: 62.5rem) {
+    .grid {
+      grid-template-columns: repeat(12, 1fr); } }
+
+.site-header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between; }
+
+.content {
+  grid-column: 1 / -1; }
+  @media screen and (min-width: 48rem) {
+    .content {
+      grid-column: 2 / -2; } }
+  @media screen and (min-width: 62.5rem) {
+    .content {
+      grid-column: 3 / -3; } }
+  @media screen and (min-width: 62.5rem) {
+    .page--dashboard .content {
+      grid-column: 4 / -3; } }
+  @media screen and (min-width: 62.5rem) {
+    .page--side-by-side .content {
+      grid-column: 1 / 8; } }
+
+.page--side-by-side .review {
+  display: none; }
+  @media screen and (min-width: 62.5rem) {
+    .page--side-by-side .review {
+      display: block;
+      grid-column: 8 / -1; } }
+
+.page--dashboard .menu {
+  display: none; }
+  @media screen and (min-width: 62.5rem) {
+    .page--dashboard .menu {
+      padding-top: 8px;
+      display: block;
+      grid-column: 1 / 4;
+      justify-self: center; } }
+.page--dashboard .menu-affordance {
+  padding-top: 8px;
+  justify-self: end; }
+  @media screen and (min-width: 62.5rem) {
+    .page--dashboard .menu-affordance {
+      display: none; } }
+
+/*# sourceMappingURL=styles.css.map */

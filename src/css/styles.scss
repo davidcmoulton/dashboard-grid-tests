@@ -1,0 +1,88 @@
+@import "variables";
+@import "normalise";
+@import "fonts";
+@import "grid";
+
+.site-header {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.content {
+
+    grid-column: 1 / -1;
+
+    @media screen and (min-width: map_get($breakpoint, two)) {
+      grid-column: 2 / -2;
+    }
+
+    @media screen and (min-width: map_get($breakpoint, three)) {
+      grid-column: 3 / -3;
+    }
+
+  .page--dashboard & {
+
+    @media screen and (min-width: map_get($breakpoint, three)) {
+      grid-column: 4 / -3;
+    }
+
+  }
+
+  .page--side-by-side & {
+
+    //@media screen and (min-width: map_get($breakpoint, two)) {
+    //  grid-column: 1 / 8;
+    //}
+
+    @media screen and (min-width: map_get($breakpoint, three)) {
+      grid-column: 1 / 8;
+    }
+
+  }
+
+}
+
+.page--side-by-side {
+
+  & .review {
+    display: none;
+
+    //@media screen and (min-width: map_get($breakpoint, two)) {
+    //  grid-column: 1 / -1;
+    //}
+    //
+    @media screen and (min-width: map_get($breakpoint, three)) {
+      display: block;
+      grid-column: 8 / -1;
+    }
+  }
+
+}
+
+.page--dashboard {
+
+  & .menu {
+
+    display: none;
+
+    @media screen and (min-width: map_get($breakpoint, three)) {
+      padding-top: 8px;
+      display: block;
+      grid-column: 1 / 4;
+      justify-self: center;
+    }
+
+  }
+
+  & .menu-affordance {
+
+    padding-top: 8px;
+    justify-self: end;
+
+    @media screen and (min-width: map_get($breakpoint, three)) {
+      display: none;
+    }
+
+  }
+}

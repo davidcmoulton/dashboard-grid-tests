@@ -1,0 +1,43 @@
+@import "variables";
+/*
+  Conceptually:
+
+  The number of grid columns changes depending on the viewport width:
+    - default -> 4 cols
+    - min-width: 480px -> 6 cols
+    - min-width: 768px -> 8 cols
+    - min-width: 1000px -> 12 cols
+
+ */
+
+.grid {
+  margin: 0 auto;
+  padding-inline: $grid-gap;
+  max-width: map_get($breakpoint, four);
+  display: grid;
+  grid-gap: $grid-gap;
+  grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, default), 1fr);
+
+  @media screen and (min-width: map_get($breakpoint, one)) {
+    grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, one), 1fr);
+  }
+
+  @media screen and (min-width: map_get($breakpoint, two)) {
+    grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, two), 1fr);
+
+    // FiX: Error: Incompatible units: 'rem' and 'fr'. Is this even possible?
+    //.page--side-by-side & {
+    //  grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, two) -1, 1fr), 1fr + $grid-gap;
+    //  margin-right: 0;
+    //}
+
+  }
+
+  @media screen and (min-width: map_get($breakpoint, three)) {
+    grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, three), 1fr);
+  }
+
+}
+
+
+
