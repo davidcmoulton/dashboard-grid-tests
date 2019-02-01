@@ -9,7 +9,7 @@
   border-bottom: 1px solid map-get($colour, divider);
 }
 
-.content {
+.content-wrapper {
 
     grid-column: 1 / -1;
 
@@ -41,7 +41,7 @@
 
 .page--side-by-side {
 
-  & .content {
+  & .content-wrapper {
     @media screen and (min-width: map_get($breakpoint, three)) {
       display: grid;
       grid-gap: $grid-gap;
@@ -49,11 +49,11 @@
     }
   }
 
-  & .content > * {
+  & .content {
     grid-column: 3 / -3;
   }
 
-  & .review {
+  & .review-wrapper {
     display: none;
 
     @media screen and (min-width: map_get($breakpoint, three)) {
@@ -69,7 +69,7 @@
     }
   }
 
-  & .review > * {
+  & .review {
     grid-column: 3 / -3;
   }
 

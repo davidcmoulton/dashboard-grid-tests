@@ -70,32 +70,32 @@ ol {
   justify-content: space-between;
   border-bottom: 1px solid #e0e0e0; }
 
-.content {
+.content-wrapper {
   grid-column: 1 / -1; }
   @media screen and (min-width: 48rem) {
-    .content {
+    .content-wrapper {
       grid-column: 2 / -2; } }
   @media screen and (min-width: 62.5rem) {
-    .content {
+    .content-wrapper {
       grid-column: 3 / -3; } }
   @media screen and (min-width: 62.5rem) {
-    .page--dashboard .content {
+    .page--dashboard .content-wrapper {
       grid-column: 4 / -3; } }
   @media screen and (min-width: 62.5rem) {
-    .page--side-by-side .content {
+    .page--side-by-side .content-wrapper {
       grid-column: 1 / 8; } }
 
 @media screen and (min-width: 62.5rem) {
-  .page--side-by-side .content {
+  .page--side-by-side .content-wrapper {
     display: grid;
     grid-gap: 1.5rem;
     grid-template-columns: repeat(12, 1fr); } }
-.page--side-by-side .content > * {
+.page--side-by-side .content {
   grid-column: 3 / -3; }
-.page--side-by-side .review {
+.page--side-by-side .review-wrapper {
   display: none; }
   @media screen and (min-width: 62.5rem) {
-    .page--side-by-side .review {
+    .page--side-by-side .review-wrapper {
       grid-column: 8 / -1;
       grid-row: 1 / -1;
       border-left: 1px solid #e0e0e0;
@@ -104,7 +104,7 @@ ol {
       align-content: start;
       grid-gap: 1.5rem;
       grid-template-columns: repeat(12, 1fr); } }
-.page--side-by-side .review > * {
+.page--side-by-side .review {
   grid-column: 3 / -3; }
 
 .page--dashboard .menu {
