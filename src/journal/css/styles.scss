@@ -1,0 +1,33 @@
+@import "variables";
+@import "../../common/normalise";
+@import "../../common/fonts";
+@import "grid";
+
+.grid > * {
+  grid-column: 2 / -2;
+}
+
+.site-header-wrapper,
+.end-matter {
+  grid-column: 1 / -1;
+}
+
+.site-header-wrapper {
+  @include grid-12-col();
+  border-bottom: 1px solid map_get($colour, divider);
+}
+
+.site-header {
+  grid-column: 2 / -2;
+}
+
+.investor-logos,
+.email-form {
+  border-top: 1px solid map_get($colour, divider);
+  text-align: center;
+}
+
+.investor-logos {
+  border-bottom: 1px solid map_get($colour, divider);
+
+}

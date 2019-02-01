@@ -1,0 +1,15 @@
+@import "variables";
+
+@mixin grid-12-col {
+  display: grid;
+  grid-template-columns: 7vw repeat(12, 1fr) 7vw;
+
+  // vw means this might not work as expected when nested. Keep an eye.
+  @media screen and (min-width: map_get($breakpoint, medium)) {
+    grid-template-columns: 14vw repeat(12, 1fr) 14vw;
+  }
+}
+
+.grid {
+  @include grid-12-col();
+}
