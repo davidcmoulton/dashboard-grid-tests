@@ -1,4 +1,9 @@
 @import "variables";
+
+@function col-count-for-breakpoint($breakpoint) {
+  @return map_get($grid-columns-by-breakpoint, $breakpoint);
+}
+
 /*
   The number of grid columns changes depending on the viewport width:
     - below 480px -> 4 cols
@@ -14,25 +19,25 @@
   max-width: map_get($breakpoint, four);
   display: grid;
   grid-gap: $grid-gap;
-  grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, default), 1fr);
+  grid-template-columns: repeat(col-count-for-breakpoint(default), 1fr);
 
   @media screen and (min-width: map_get($breakpoint, one)) {
-    grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, one), 1fr);
+    grid-template-columns: repeat(col-count-for-breakpoint(one), 1fr);
   }
 
   @media screen and (min-width: map_get($breakpoint, two)) {
-    grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, two), 1fr);
+    grid-template-columns: repeat(col-count-for-breakpoint(two), 1fr);
   }
 
   @media screen and (min-width: map_get($breakpoint, three)) {
-    grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, three), 1fr);
+    grid-template-columns: repeat(col-count-for-breakpoint(three), 1fr);
   }
 
   .page--side-by-side & {
     @media screen and (min-width: map_get($breakpoint, three)) {
       max-width: calc(#{map_get($breakpoint, four)} + 24px);
       padding-right: 0;
-      grid-template-columns: repeat(map_get($grid-columns-by-breakpoint, three), 1fr) 0;
+      grid-template-columns: repeat(col-count-for-breakpoint(three), 1fr) 0;
     }
   }
 
