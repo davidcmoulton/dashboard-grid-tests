@@ -67,7 +67,8 @@ ol {
 
 .site-header {
   display: flex;
-  justify-content: space-between; }
+  justify-content: space-between;
+  border-bottom: 1px solid #e0e0e0; }
 
 .content {
   grid-column: 1 / -1; }
@@ -96,7 +97,9 @@ ol {
   @media screen and (min-width: 62.5rem) {
     .page--side-by-side .review {
       display: block;
-      grid-column: 8 / -1; } }
+      grid-column: 8 / -1;
+      grid-row: 1 / -1;
+      border-left: 1px solid #e0e0e0; } }
 
 .page--dashboard .menu {
   display: none; }

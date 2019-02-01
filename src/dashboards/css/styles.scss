@@ -6,6 +6,7 @@
 .site-header {
   display: flex;
   justify-content: space-between;
+  border-bottom: 1px solid map-get($colour, divider);
 }
 
 .content {
@@ -58,6 +59,8 @@
     @media screen and (min-width: map_get($breakpoint, three)) {
       display: block;
       grid-column: 8 / -1;
+      grid-row: 1 / -1;
+      border-left: 1px solid map_get($colour, divider);
     }
   }
 
