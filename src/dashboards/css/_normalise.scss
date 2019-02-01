@@ -17,6 +17,16 @@ h3 {
   margin-top:0;
 }
 
+h1 {
+  font-size: #{36 / $base-font-size-in-px}rem;
+  line-height: 48px;
+}
+
+h2 {
+  font-size: #{26 / $base-font-size-in-px}rem;
+  line-height: 30px;
+}
+
 ul,
 ol {
   list-style: none;

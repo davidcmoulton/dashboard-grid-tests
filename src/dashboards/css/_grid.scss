@@ -14,7 +14,7 @@
 
 .grid {
   box-sizing: border-box;
-  margin: 0 auto;
+  margin: 1.5rem auto 0;
   padding: 0 $grid-gap;
   max-width: map_get($breakpoint, four);
   display: grid;
