@@ -84,6 +84,13 @@ ol {
     .page--side-by-side .content {
       grid-column: 1 / 8; } }
 
+@media screen and (min-width: 62.5rem) {
+  .page--side-by-side .content {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-template-columns: repeat(12, 1fr); } }
+.page--side-by-side .content > * {
+  grid-column: 3 / -3; }
 .page--side-by-side .review {
   display: none; }
   @media screen and (min-width: 62.5rem) {

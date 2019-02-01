@@ -40,6 +40,18 @@
 
 .page--side-by-side {
 
+  & .content {
+    @media screen and (min-width: map_get($breakpoint, three)) {
+      display: grid;
+      grid-gap: $grid-gap;
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  & .content > * {
+    grid-column: 3 / -3;
+  }
+
   & .review {
     display: none;
 
