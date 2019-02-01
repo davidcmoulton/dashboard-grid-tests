@@ -1,19 +1,16 @@
 @import "variables";
 /*
-  Conceptually:
-
   The number of grid columns changes depending on the viewport width:
-    - default -> 4 cols
+    - below 480px -> 4 cols
     - min-width: 480px -> 6 cols
     - min-width: 768px -> 8 cols
     - min-width: 1000px -> 12 cols
-
  */
 
 .grid {
   box-sizing: border-box;
   margin: 0 auto;
-  padding-inline: $grid-gap;
+  padding: 0 $grid-gap;
   max-width: map_get($breakpoint, four);
   display: grid;
   grid-gap: $grid-gap;

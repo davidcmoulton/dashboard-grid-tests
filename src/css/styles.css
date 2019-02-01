@@ -36,19 +36,16 @@ ol {
   src: url("../fonts/NotoSerif-Bold-webfont-basic-latin-subsetting.woff2") format("woff2");
   font-weight: bold; }
 /*
-  Conceptually:
-
   The number of grid columns changes depending on the viewport width:
-    - default -> 4 cols
+    - below 480px -> 4 cols
     - min-width: 480px -> 6 cols
     - min-width: 768px -> 8 cols
     - min-width: 1000px -> 12 cols
-
  */
 .grid {
   box-sizing: border-box;
   margin: 0 auto;
-  padding-inline: 1.5rem;
+  padding: 0 1.5rem;
   max-width: 79.5rem;
   display: grid;
   grid-gap: 1.5rem;
