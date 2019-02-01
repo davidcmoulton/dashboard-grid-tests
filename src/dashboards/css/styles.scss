@@ -1,9 +1,9 @@
 @import "variables";
-@import "normalise";
-@import "fonts";
+@import "../../common/normalise";
+@import "../../common/fonts";
 @import "grid";
 
-.site-header {
+.site-header-wrapper {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid map-get($colour, divider);

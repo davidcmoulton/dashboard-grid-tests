@@ -28,20 +28,20 @@ ol {
 @font-face {
   font-display: fallback;
   font-family: "Noto Sans";
-  src: url("../../fonts/NotoSans-Regular-webfont-custom-2-subsetting.woff2") format("woff2"); }
+  src: url("../../common/fonts/NotoSans-Regular-webfont-custom-2-subsetting.woff2") format("woff2"); }
 @font-face {
   font-display: fallback;
   font-family: "Noto Sans";
-  src: url("../../fonts/NotoSans-SemiBold-webfont-custom-2-subsetting.woff2") format("woff2");
+  src: url("../../common/fonts/NotoSans-SemiBold-webfont-custom-2-subsetting.woff2") format("woff2");
   font-weight: 600; }
 @font-face {
   font-display: fallback;
   font-family: "Noto Serif";
-  src: url("../../fonts/NotoSerif-Regular-webfont-custom-2-subsetting.woff2") format("woff2"); }
+  src: url("../../common/fonts/NotoSerif-Regular-webfont-custom-2-subsetting.woff2") format("woff2"); }
 @font-face {
   font-display: fallback;
   font-family: "Noto Serif";
-  src: url("../../fonts/NotoSerif-Bold-webfont-basic-latin-subsetting.woff2") format("woff2");
+  src: url("../../common/fonts/NotoSerif-Bold-webfont-basic-latin-subsetting.woff2") format("woff2");
   font-weight: bold; }
 /*
   The number of grid columns changes depending on the viewport width:
@@ -80,7 +80,7 @@ ol {
       grid-template-columns: repeat(12, 1fr) 0;
       padding-right: 0; } }
 
-.site-header {
+.site-header-wrapper {
   display: flex;
   justify-content: space-between;
   border-bottom: 1px solid #e0e0e0;

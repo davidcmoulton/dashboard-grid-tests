@@ -1,7 +1,6 @@
+@import "../../common/variables";
+
 $grid-gap: 1.5rem;
-
-$base-font-size-in-px: 16;
-
 $breakpoint: (
   one: #{480 / $base-font-size-in-px}rem,
   two: #{768 / $base-font-size-in-px}rem,
@@ -15,8 +14,4 @@ $grid-columns-by-breakpoint: (
   two: 8,
   three: 12,
   four: 12,
-);
-
-$colour: (
-  divider: #e0e0e0,
 );
