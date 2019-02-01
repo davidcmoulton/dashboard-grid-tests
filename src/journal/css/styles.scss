@@ -10,10 +10,11 @@
 .site-header-wrapper,
 .end-matter {
   grid-column: 1 / -1;
+  grid-column-gap: $grid-gap;
 }
 
 .site-header-wrapper {
-  @include grid-12-col();
+  @include grid-setup();
   border-bottom: 1px solid map_get($colour, divider);
 }
 

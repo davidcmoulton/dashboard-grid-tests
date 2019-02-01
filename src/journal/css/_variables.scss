@@ -1,7 +1,8 @@
 @import "../../common/variables";
 
-$grid-gap: 1.5rem;
-
+//$grid-gap: 1.5rem;
+$grid-gap: 1.6%;
+$max-width: 1114px;
 $breakpoint: (
     x-small: #{320 / $base-font-size-in-px}rem,
     small: #{480 / $base-font-size-in-px}rem,

@@ -45,25 +45,40 @@ ol {
   font-weight: bold; }
 .grid {
   display: grid;
-  grid-template-columns: 7vw repeat(12, 1fr) 7vw; }
+  grid-column-gap: 1.6%;
+  /*
+   Nullify the effect of the first and last grip gaps by reducing the first and last column tracks
+    respectively by the width of the grid gap. The first and last grid column tracks are only used in
+    order to be able to have a full width separator preceding and /or following a row which isn't full
+    width
+  */
+  grid-template-columns: calc(7vw - 1.6%) repeat(12, 1fr) calc(7vw - 1.6%); }
   @media screen and (min-width: 45.625rem) {
     .grid {
-      grid-template-columns: 14vw repeat(12, 1fr) 14vw; } }
+      grid-template-columns: calc(14vw - 1.6%) repeat(12, 1fr) calc(14vw - 1.6%); } }
 
 .grid > * {
   grid-column: 2 / -2; }
 
 .site-header-wrapper,
 .end-matter {
-  grid-column: 1 / -1; }
+  grid-column: 1 / -1;
+  grid-column-gap: 1.6%; }
 
 .site-header-wrapper {
   display: grid;
-  grid-template-columns: 7vw repeat(12, 1fr) 7vw;
+  grid-column-gap: 1.6%;
+  /*
+   Nullify the effect of the first and last grip gaps by reducing the first and last column tracks
+    respectively by the width of the grid gap. The first and last grid column tracks are only used in
+    order to be able to have a full width separator preceding and /or following a row which isn't full
+    width
+  */
+  grid-template-columns: calc(7vw - 1.6%) repeat(12, 1fr) calc(7vw - 1.6%);
   border-bottom: 1px solid #e0e0e0; }
   @media screen and (min-width: 45.625rem) {
     .site-header-wrapper {
-      grid-template-columns: 14vw repeat(12, 1fr) 14vw; } }
+      grid-template-columns: calc(14vw - 1.6%) repeat(12, 1fr) calc(14vw - 1.6%); } }
 
 .site-header {
   grid-column: 2 / -2; }
