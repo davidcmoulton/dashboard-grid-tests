@@ -14,10 +14,10 @@
 
 .grid {
   box-sizing: border-box;
-  margin: 1.5rem auto 0;
+  display: grid;
+  margin: $grid-gap auto 0;
   padding: 0 $grid-gap;
   max-width: map_get($breakpoint, four);
-  display: grid;
   grid-gap: $grid-gap;
   grid-template-columns: repeat(col-count-for-breakpoint(default), 1fr);
 
@@ -33,11 +33,18 @@
     grid-template-columns: repeat(col-count-for-breakpoint(three), 1fr);
   }
 
+  /*
+    NOTE: This gives the impression of the element breaking out of the grid by creating a 0-width column at the end of
+    the grid and making the element span it, which forces the element to span the gutter between the last proper
+    grid track and the 0-width one. Finally, we remove the padding from the inline end of the grid because as we now
+    have the spanned gutter instead. This only works because the width of the gutter is the same as the width of the
+    padding from the inline end of the grid.
+  */
   .page--side-by-side & {
     @media screen and (min-width: map_get($breakpoint, three)) {
       max-width: unset;
-      padding-right: 0;
       grid-template-columns: repeat(col-count-for-breakpoint(three), 1fr) 0;
+      padding-right: 0;
     }
   }
 
