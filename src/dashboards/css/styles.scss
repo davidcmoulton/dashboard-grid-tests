@@ -34,27 +34,23 @@
 
     @media screen and (min-width: map_get($breakpoint, three)) {
       grid-column: 1 / 8;
+
+      display: grid;
+      grid-gap: $grid-gap;
+      grid-template-columns: repeat(12, 1fr);
+    }
+
+    & .content {
+      grid-column: 3 / -3;
     }
 
   }
 
 }
 
-.page--side-by-side {
+.review-wrapper {
 
-  & .content-wrapper {
-    @media screen and (min-width: map_get($breakpoint, three)) {
-      display: grid;
-      grid-gap: $grid-gap;
-      grid-template-columns: repeat(12, 1fr);
-    }
-  }
-
-  & .content {
-    grid-column: 3 / -3;
-  }
-
-  & .review-wrapper {
+  .page--side-by-side & {
     display: none;
 
     @media screen and (min-width: map_get($breakpoint, three)) {
@@ -68,6 +64,7 @@
       grid-gap: $grid-gap;
       grid-template-columns: repeat(12, 1fr);
     }
+
   }
 
   & .review {

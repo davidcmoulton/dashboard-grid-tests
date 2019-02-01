@@ -99,15 +99,13 @@ ol {
       grid-column: 4 / -3; } }
   @media screen and (min-width: 62.5rem) {
     .page--side-by-side .content-wrapper {
-      grid-column: 1 / 8; } }
+      grid-column: 1 / 8;
+      display: grid;
+      grid-gap: 1.5rem;
+      grid-template-columns: repeat(12, 1fr); } }
+  .page--side-by-side .content-wrapper .content {
+    grid-column: 3 / -3; }
 
-@media screen and (min-width: 62.5rem) {
-  .page--side-by-side .content-wrapper {
-    display: grid;
-    grid-gap: 1.5rem;
-    grid-template-columns: repeat(12, 1fr); } }
-.page--side-by-side .content {
-  grid-column: 3 / -3; }
 .page--side-by-side .review-wrapper {
   display: none; }
   @media screen and (min-width: 62.5rem) {
@@ -120,7 +118,7 @@ ol {
       align-content: start;
       grid-gap: 1.5rem;
       grid-template-columns: repeat(12, 1fr); } }
-.page--side-by-side .review {
+.review-wrapper .review {
   grid-column: 3 / -3; }
 
 .page--dashboard .menu {
