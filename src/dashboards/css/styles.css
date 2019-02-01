@@ -96,10 +96,16 @@ ol {
   display: none; }
   @media screen and (min-width: 62.5rem) {
     .page--side-by-side .review {
-      display: block;
       grid-column: 8 / -1;
       grid-row: 1 / -1;
-      border-left: 1px solid #e0e0e0; } }
+      border-left: 1px solid #e0e0e0;
+      display: grid;
+      align-items: start;
+      align-content: start;
+      grid-gap: 1.5rem;
+      grid-template-columns: repeat(12, 1fr); } }
+.page--side-by-side .review > * {
+  grid-column: 3 / -3; }
 
 .page--dashboard .menu {
   display: none; }

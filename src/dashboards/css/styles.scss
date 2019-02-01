@@ -57,11 +57,20 @@
     display: none;
 
     @media screen and (min-width: map_get($breakpoint, three)) {
-      display: block;
       grid-column: 8 / -1;
       grid-row: 1 / -1;
       border-left: 1px solid map_get($colour, divider);
+
+      display: grid;
+      align-items: start;
+      align-content: start;
+      grid-gap: $grid-gap;
+      grid-template-columns: repeat(12, 1fr);
     }
+  }
+
+  & .review > * {
+    grid-column: 3 / -3;
   }
 
 }
