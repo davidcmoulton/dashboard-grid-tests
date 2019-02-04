@@ -24,7 +24,7 @@ $max-width: 1114px;
 
   @media screen and (min-width: map_get($breakpoint, x-wide)) {
      //The main 12 column section of the grid has a fixed width from this breakpoint.
-    // TODO: accommodate possibility of non-percentage values? (Also consider easier case of a fixed grid gap
+    // TODO: accommodate possibility of non-percentage values? (Also consider easier case of a fixed grid gap)
     $column-gap: $max-width * $grid-gap-decimal;
     // There are 11 gutters to account for within the central 12 columns:
     $column-track-size: ($max-width - ($column-gap * 11)) / 12;
