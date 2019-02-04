@@ -52,10 +52,16 @@ ol {
     order to be able to have a full width separator preceding and /or following a row which isn't full
     width
   */
-  grid-template-columns: calc(7vw - 1.6%) repeat(12, 1fr) calc(7vw - 1.6%); }
+  grid-template-columns: calc(7vw - 1.6%) repeat(12, 1fr) calc(7vw - 1.6%);
+  width: 100vw; }
   @media screen and (min-width: 45.625rem) {
     .grid {
       grid-template-columns: calc(14vw - 1.6%) repeat(12, 1fr) calc(14vw - 1.6%); } }
+  @media screen and (min-width: 75rem) {
+    .grid {
+      /* Grid is fixed width at and above this breakpoint. This means grid-gap and column widths can be explicitly set in rem / px */
+      grid-gap: 18px;
+      grid-template-columns: 1fr repeat(12, 76px) 1fr; } }
 
 .grid > * {
   grid-column: 2 / -2; }
@@ -79,6 +85,11 @@ ol {
   @media screen and (min-width: 45.625rem) {
     .site-header-wrapper {
       grid-template-columns: calc(14vw - 1.6%) repeat(12, 1fr) calc(14vw - 1.6%); } }
+  @media screen and (min-width: 75rem) {
+    .site-header-wrapper {
+      /* Grid is fixed width at and above this breakpoint. This means grid-gap and column widths can be explicitly set in rem / px */
+      grid-gap: 18px;
+      grid-template-columns: 1fr repeat(12, 76px) 1fr; } }
 
 .site-header {
   grid-column: 2 / -2; }
