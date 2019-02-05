@@ -15,12 +15,15 @@
   @include grid-span-all();
   @include divider(bottom);
 
-  @include grid-setup();
-  grid-column-gap: map_get($grid, gap);
+  @include grid-setup(map_get($grid, column-count), map_get($grid, column-gap), $max-width);
 }
 
 .site-header {
   @include grid-span-full();
+}
+
+.end-matter {
+  @include grid-span-all();
 }
 
 .investor-logos,

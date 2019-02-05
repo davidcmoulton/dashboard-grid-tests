@@ -10,8 +10,8 @@
  */
 
 // Nullify the effect of the first and last gutters by reducing both the first and last column tracks by the width of the grid gap.
-@function grid-edge-space($size) {
-  @return calc(#{map_get($grid, edge-space-#{$size})} - #{map_get($grid, gap)})
+@function grid-edge-space($size, $grid-gap) {
+  @return calc(#{map_get($grid, edge-space-#{$size})} - #{$grid-gap});
 }
 
 // Span every column track
@@ -19,35 +19,38 @@
   grid-column: 1 / -1;
 }
 
-// Span every column track except the respective left / right gutter tracks
+// Span every main column track (i.e. all except the respective left / right gutter tracks)
 @mixin grid-span-full {
   grid-column: 2 / -2;
 }
 
-@mixin grid-setup {
+// $column-count is the number of columns for the main area (i.e. excluding gutter tracks on the left and right edge)
+// $column-gap can be set in any css length unit
+// $max-width: the maximum width for the main area
+@mixin grid-setup($column-count, $column-gap, $max-width) {
   display: grid;
-  grid-column-gap: map_get($grid, gap);
-  grid-template-columns: grid-edge-space(medium) repeat(12, 1fr) grid-edge-space(medium);
+  grid-column-gap: $column-gap;
+  grid-template-columns: grid-edge-space(medium, $column-gap) repeat($column-count, 1fr) grid-edge-space(medium, $column-gap);
 
   @media screen and (min-width: map_get($breakpoint, medium)) {
-    grid-template-columns: grid-edge-space(large) repeat(12, 1fr) grid-edge-space(large);
+    grid-template-columns: grid-edge-space(large, $column-gap) repeat($column-count, 1fr) grid-edge-space(large, $column-gap);
   }
 
   @media screen and (min-width: map_get($breakpoint, x-wide)) {
-     //The main 12 column section of the grid has a fixed width from this breakpoint.
-    $grid-gap-fixed: map_get($grid, gap);
-    @if unit(map_get($grid, gap)) == "%" {
-      $grid-gap-fixed: $max-width * (map_get($grid, gap) / 100%);
+     //The main $column-count column section of the grid has a fixed width from this breakpoint.
+    $column-gap-fixed: $column-gap;
+    @if unit($column-gap) == "%" {
+      $column-gap-fixed: $max-width * ($column-gap / 100%);
+      grid-column-gap: $column-gap-fixed;
     }
-    grid-column-gap: $grid-gap-fixed;
 
-    // There are 11 gutters to account for within the central 12 columns:
-    $column-track-fixed: ($max-width - ($grid-gap-fixed * 11)) / 12;
-    grid-template-columns: 1fr repeat(12, $column-track-fixed) 1fr;
+    // There are $column-count - 1 gutters to account for within the central $column-count number of columns:
+    $column-track-fixed: ($max-width - ($column-gap-fixed * ($column-count - 1))) / $column-count;
+    grid-template-columns: 1fr repeat($column-count, $column-track-fixed) 1fr;
   }
 }
 
 .grid {
-  @include grid-setup();
+  @include grid-setup(map_get($grid, column-count), map_get($grid, column-gap), $max-width);
   width: 100vw;
 }

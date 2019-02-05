@@ -72,8 +72,7 @@ columns within the gutters are added.
   border-bottom: 1px solid #e0e0e0;
   display: grid;
   grid-column-gap: 1.6%;
-  grid-template-columns: calc(7vw - 1.6%) repeat(12, 1fr) calc(7vw - 1.6%);
-  grid-column-gap: 1.6%; }
+  grid-template-columns: calc(7vw - 1.6%) repeat(12, 1fr) calc(7vw - 1.6%); }
   @media screen and (min-width: 45.625rem) {
     .site-header-wrapper {
       grid-template-columns: calc(14vw - 1.6%) repeat(12, 1fr) calc(14vw - 1.6%); } }
@@ -84,6 +83,9 @@ columns within the gutters are added.
 
 .site-header {
   grid-column: 2 / -2; }
+
+.end-matter {
+  grid-column: 1 / -1; }
 
 .investor-logos,
 .email-form {

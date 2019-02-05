@@ -9,9 +9,10 @@ $breakpoint: (
 );
 
 $grid: (
+    column-count: 12,
     edge-space-medium: 7vw,
     edge-space-large: 14vw,
-    gap: 1.6%,
+    column-gap: 1.6%,
 );
 
 $max-width: 1114px;
