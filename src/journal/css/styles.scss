@@ -8,11 +8,11 @@
 }
 
 .grid > * {
-  grid-column: 2 / -2;
+  @include grid-span-full();
 }
 
 .site-header-wrapper {
-  grid-column: 1 / -1;
+  @include grid-span-all();
   @include divider(bottom);
 
   @include grid-setup();
@@ -20,7 +20,7 @@
 }
 
 .site-header {
-  grid-column: 2 / -2;
+  @include grid-span-full();
 }
 
 .investor-logos,

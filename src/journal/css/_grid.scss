@@ -14,6 +14,16 @@
   @return calc(#{map_get($grid, edge-space-#{$size})} - #{map_get($grid, gap)})
 }
 
+// Span every column track
+@mixin grid-span-all {
+  grid-column: 1 / -1;
+}
+
+// Span every column track except the respective left / right gutter tracks
+@mixin grid-span-full {
+  grid-column: 2 / -2;
+}
+
 @mixin grid-setup {
   display: grid;
   grid-column-gap: map_get($grid, gap);
