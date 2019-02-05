@@ -1,21 +1,22 @@
 @import "variables";
 
-$grid-edge-space: (
-    medium: 7vw,
-    large: 14vw,
-);
-$grid-gap: 1.6%;
-$grid-gap-decimal: 0.016;
-$max-width: 1114px;
+ /*
+ The grid comprises a central 12 columns plus one left gutter and one right gutter. The central 12 columns are where
+ everything normally goes, the side gutters provide centring, and allow elements to appear to break out of the grid.
+ The 'breaking out' is to one or both viewport edges, there's no more finely grained differential offset at the moment.
+ This could be provided by the addition of extra columns either side of the central 12 columns, but would require
+ further investigation to maintain the centring capability provided by the left/right gutters when additional
+ columns within the gutters are added.
+ */
 
 // Nullify the effect of the first and last gutters by reducing both the first and last column tracks by the width of the grid gap.
 @function grid-edge-space($size) {
-  @return calc(#{map_get($grid-edge-space, $size)} - #{$grid-gap})
+  @return calc(#{map_get($grid, edge-space-#{$size})} - #{map_get($grid, gap)})
 }
 
 @mixin grid-setup {
   display: grid;
-  grid-column-gap: $grid-gap;
+  grid-column-gap: map_get($grid, gap);
   grid-template-columns: grid-edge-space(medium) repeat(12, 1fr) grid-edge-space(medium);
 
   @media screen and (min-width: map_get($breakpoint, medium)) {
@@ -24,12 +25,15 @@ $max-width: 1114px;
 
   @media screen and (min-width: map_get($breakpoint, x-wide)) {
      //The main 12 column section of the grid has a fixed width from this breakpoint.
-    // TODO: accommodate possibility of non-percentage values? (Also consider easier case of a fixed grid gap)
-    $column-gap: $max-width * $grid-gap-decimal;
+    $grid-gap-fixed: map_get($grid, gap);
+    @if unit(map_get($grid, gap)) == "%" {
+      $grid-gap-fixed: $max-width * (map_get($grid, gap) / 100%);
+    }
+    grid-column-gap: $grid-gap-fixed;
+
     // There are 11 gutters to account for within the central 12 columns:
-    $column-track-size: ($max-width - ($column-gap * 11)) / 12;
-    grid-column-gap: $column-gap;
-    grid-template-columns: 1fr repeat(12, $column-track-size) 1fr;
+    $column-track-fixed: ($max-width - ($grid-gap-fixed * 11)) / 12;
+    grid-template-columns: 1fr repeat(12, $column-track-fixed) 1fr;
   }
 }
 

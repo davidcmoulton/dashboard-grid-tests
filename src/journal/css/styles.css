@@ -43,6 +43,14 @@ ol {
   font-family: "Noto Serif";
   src: url("../../common/fonts/NotoSerif-Bold-webfont-basic-latin-subsetting.woff2") format("woff2");
   font-weight: bold; }
+/*
+The grid comprises a central 12 columns plus one left gutter and one right gutter. The central 12 columns are where
+everything normally goes, the side gutters provide centring, and allow elements to appear to break out of the grid.
+The 'breaking out' is to one or both viewport edges, there's no more finely grained differential offset at the moment.
+This could be provided by the addition of extra columns either side of the central 12 columns, but would require
+further investigation to maintain the centring capability provided by the left/right gutters when additional
+columns within the gutters are added.
+*/
 .grid {
   display: grid;
   grid-column-gap: 1.6%;
