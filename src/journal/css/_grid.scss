@@ -54,3 +54,11 @@
   @include grid-setup(map_get($grid, column-count), map_get($grid, column-gap), $max-width);
   width: 100vw;
 }
+
+.grid-item--span-all {
+  @include grid-span-all();
+}
+
+.grid-item--span-full {
+  @include grid-span-full();
+}

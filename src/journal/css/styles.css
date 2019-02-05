@@ -64,6 +64,12 @@ columns within the gutters are added.
       grid-column-gap: 17.824px;
       grid-template-columns: 1fr repeat(12, 76.49467px) 1fr; } }
 
+.grid-item--span-all {
+  grid-column: 1 / -1; }
+
+.grid-item--span-full {
+  grid-column: 2 / -2; }
+
 .grid > * {
   grid-column: 2 / -2; }
 
