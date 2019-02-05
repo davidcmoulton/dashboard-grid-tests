@@ -3,7 +3,7 @@
 @import "../../common/fonts";
 @import "grid";
 
-@mixin keyline($side) {
+@mixin divider($side) {
   border-#{$side}: 1px solid map_get($colour, divider);
 }
 
@@ -11,15 +11,12 @@
   grid-column: 2 / -2;
 }
 
-.site-header-wrapper,
-.end-matter {
-  grid-column: 1 / -1;
-  grid-column-gap: map_get($grid, gap);
-}
-
 .site-header-wrapper {
+  grid-column: 1 / -1;
+  @include divider(bottom);
+
   @include grid-setup();
-  @include keyline(bottom);
+  grid-column-gap: map_get($grid, gap);
 }
 
 .site-header {
@@ -28,10 +25,10 @@
 
 .investor-logos,
 .email-form {
-  @include keyline(top);
+  @include divider(top);
   text-align: center;
 }
 
 .investor-logos {
-  @include keyline(bottom);
+  @include divider(bottom);
 }
